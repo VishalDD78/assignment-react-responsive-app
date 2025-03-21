@@ -1,13 +1,12 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
     experimental: {
-      optimizeCss: false, // Disables Tailwind CSS optimization
+      optimizeCss: false, 
+      esmExternals: true,
     },
     webpack: (config) => {
-      config.resolve.fallback = { fs: false }; // Fixes filesystem dependency issues
+      config.resolve.fallback = { fs: false };
       return config;
     },
   };
   
   export default nextConfig;
-  
